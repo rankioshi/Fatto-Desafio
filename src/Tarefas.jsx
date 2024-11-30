@@ -21,6 +21,18 @@ const Tarefas = () => {
         }
     };
 
+    useEffect(() => {
+        const fetchTarefasIntervalo = setInterval(() => {
+          if (tarefas.length === 0) {
+            handleGetAllTarefas();
+          }
+        }, 5000);
+      
+      
+        return () => clearInterval(fetchTarefasIntervalo);
+      }, [tarefas]);
+      
+
     const handleEditarTarefa = async () => {
         const tarefaRequesicao = { nome, valor, dataLimite };
         await editarTarefa(tarefaAtual.id, tarefaRequesicao);
