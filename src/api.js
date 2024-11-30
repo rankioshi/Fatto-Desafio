@@ -1,4 +1,4 @@
-const URL = "http://localhost:8080";
+const URL = "https://fatto-desafio.onrender.com";
 
 const adicionarTarefa = async (tarefaRequisicao) => {
     try {
